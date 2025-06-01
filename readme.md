@@ -1,110 +1,117 @@
-# 📁 Organisateur de Téléchargements
+# 📁 Download Organizer
 
-Un script bash simple et efficace pour organiser automatiquement vos fichiers de téléchargements par type.
+A simple and efficient bash script to automatically organize your downloaded files by type.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-- **Organisation automatique** : Trie vos fichiers par extension dans des dossiers dédiés
-- **Journalisation complète** : Enregistre toutes les opérations avec horodatage
-- **Support multi-formats** : Images, vidéos, audio, documents, archives et installateurs
-- **Gestion des erreurs** : Vérification de l'existence du dossier de téléchargements
-- **Dossier "Autres"** : Les fichiers non reconnus sont rangés automatiquement
+- **Automatic organization**: Sorts your files by extension into dedicated folders
+- **Full logging**: Records all operations with timestamps
+- **Multi-format support**: Images, videos, audio, documents, archives, and installers
+- **Error handling**: Checks if the Downloads folder exists
+- **"Others" folder**: Unrecognized files are automatically sorted
 
-## 🗂️ Structure d'organisation
+## 🗂️ Organization Structure
 
-Le script organise vos fichiers dans les dossiers suivants :
+The script organizes your files into the following folders:
 
-| Type de fichier | Extensions supportées | Dossier de destination |
-|----------------|----------------------|----------------------|
-| **Images** | jpg, jpeg, png, gif, webp | `Images/` |
-| **Vidéos** | mp4, mkv, avi, mov | `Vidéos/` |
-| **Audio** | mp3, wav, flac | `Audio/` |
-| **Documents** | pdf, doc, docx, xls, xlsx, ppt, pptx, txt | `Docs/` |
-| **Archives** | zip, tar, gz, rar, 7z | `Archives/` |
-| **Installateurs** | exe, appimage, deb, rpm | `Installateurs/` |
-| **Autres** | Tous les autres formats | `Autres/` |
+| File Type      | Supported Extensions                      | Destination Folder |
+| -------------- | ----------------------------------------- | ------------------ |
+| **Images**     | jpg, jpeg, png, gif, webp, avif, svg      | `Pictures/`        |
+| **Videos**     | mp4, mkv, avi, mov                        | `Videos/`          |
+| **Audio**      | mp3, wav, flac, m4a, opus                 | `Audio/`           |
+| **Documents**  | pdf, doc, docx, xls, xlsx, ppt, pptx, txt | `Docs/`            |
+| **Archives**   | zip, tar, gz, rar, 7z                     | `Archives/`        |
+| **Installers** | exe, appimage, deb, rpm                   | `Installers/`      |
+| **Others**     | All other formats                         | `Other/`           |
 
-## 🚀 Installation et utilisation
+## 🚀 Installation & Usage
 
-### Prérequis
-- Système Linux avec bash
-- Dossier `~/Téléchargements` existant
+### Prerequisites
+
+- Linux system with bash
+- Existing `~/Downloads` folder
 
 ### Installation
 
-1. **Clonez le repository**
+1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Amedon-Roland/organize_dowload_folder.git
    cd organize_dowload_folder
    ```
 
-2. **Rendez le script exécutable**
+2. **Make the script executable**
+
    ```bash
-   chmod +x organiser_telechargements.sh
+   chmod +x script.sh
    ```
 
-3. **Exécutez le script**
+3. **Run the script**
    ```bash
-   ./organiser_telechargements.sh
+   ./script.sh
    ```
 
-### Automatisation (optionnel)
+### Automation (optional)
 
-Pour exécuter le script automatiquement, ajoutez-le à votre crontab :
+To run the script automatically, add it to your crontab:
 
 ```bash
-# Exécuter toutes les heures
-0 * * * * /chemin/vers/organiser_telechargements.sh
+# Run every hour
+0 * * * * /path/to/script.sh
 
-# Exécuter tous les jours à 23h00
-0 23 * * * /chemin/vers/organiser_telechargements.sh
+# Run every day at 11:00 PM
+0 23 * * * /path/to/script.sh
 ```
 
-## 📋 Journalisation
+## 📋 Logging
 
-Le script génère un fichier de log détaillé dans `~/organiser_telechargements.log` qui contient :
-- Horodatage de chaque exécution
-- Liste de tous les fichiers déplacés
-- Destination de chaque fichier
-- Messages d'erreur éventuels
+The script generates a detailed log file in `~/organiser_telechargements.log` containing:
 
-Exemple de log :
+- Timestamp of each execution
+- List of all moved files
+- Destination of each file
+- Any error messages
+
+Example log:
+
 ```
 ==== 2025-05-29 14:30:15 ====
-Déplacé : document.pdf → Docs/
-Déplacé : photo.jpg → Images/
-Déplacé : video.mp4 → Vidéos/
-Organisation terminée.
+Moved: document.pdf → Docs/
+Moved: photo.jpg → Pictures/
+Moved: video.mp4 → Videos/
+Organization complete.
 ```
 
-## 🎯 Plateformes supportées
+## 🎯 Supported Platforms
 
-- ✅ **Linux** - Version actuelle
-- ⏳ **Windows** - Version en cours de développement
+- ✅ **Linux** - Current version
+- ⏳ **Windows** - In development
 
-> 🚧 **Bientôt disponible** : Une version PowerShell pour Windows arrivera prochainement !
+> 🚧 **Coming soon**: A PowerShell version for Windows will be available soon!
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-Les contributions sont les bienvenues ! N'hésitez pas à :
-- Signaler des bugs
-- Proposer de nouvelles fonctionnalités
-- Améliorer la documentation
-- Ajouter de nouveaux types de fichiers
+Contributions are welcome! Feel free to:
 
-## 📝 Licence
+- Report bugs
+- Suggest new features
+- Improve documentation
+- Add new file types
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+## 📝 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## 🛠️ Support
 
-Si vous rencontrez des problèmes ou avez des questions :
-- Ouvrez une issue sur GitHub
-- Consultez les logs dans `~/organiser_telechargements.log`
-- Vérifiez que le dossier `~/Téléchargements` existe
+If you encounter issues or have questions:
+
+- Open an issue on GitHub
+- Check the logs in `~/logs/download_files_organizer.log`
+- Make sure the `~/Downloads` folder exists
 
 ---
 
 **Made with ❤️ by [RolandTech](https://github.com/Amedon-Roland)**
 
-> ⭐ Si ce projet vous aide, n'hésitez pas à lui donner une étoile sur GitHub !
+> ⭐ If this project helps you, please consider giving it a star on GitHub!
